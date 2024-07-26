@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+:root {
+  /**
+   * colors
+   */
+
+  --spanish-gray: hsl(0, 0%, 60%);
+  --sonic-silver: hsl(0, 0%, 47%);
+  --eerie-black: hsl(0, 0%, 13%);
+  --salmon-pink: hsl(353, 100%, 78%);
+  --sandy-brown: hsl(29, 90%, 65%);
+  --bittersweet: hsl(0, 100%, 70%);
+  --ocean-green: hsl(152, 51%, 52%);
+  --davys-gray: hsl(0, 0%, 33%);
+  --cultured: hsl(0, 0%, 93%);
+  --white: hsl(0, 100%, 100%);
+  --onyx: hsl(0, 0%, 27%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #000;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  background: url("../images/store1.jpg");
+  background-position: center;
+}
+
+nav {
+  position: fixed;
+  padding: 25px 60px;
+  z-index: 1;
+}
+
+nav a img {
+  width: 250px;
+}
+
+.form-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 15px;
+  padding: 70px;
+  width: 450px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.form-wrapper h2 {
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+.form-wrapper form {
+  margin: 25px 0 65px;
+}
+
+form .form-control {
+  height: 50px;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.form-control input {
+  height: 100%;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0 20px;
+}
+
+.form-control input:is(:focus, :valid) {
+  background: #444;
+  padding: 16px 20px 0;
+}
+
+.form-control label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+  color: #8c8c8c;
+  transition: all 0.1s ease;
+}
+
+.form-control input:is(:focus, :valid) ~ label {
+  font-size: 0.75rem;
+  transform: translateY(-130%);
+}
+
+form button {
+  width: 100%;
+  padding: 16px 0;
+  font-size: 1rem;
+  background: var(--bittersweet);
+  color: #fff;
+  font-weight: 500;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  margin: 25px 0 10px;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+
+form button:hover {
+  background: var(--salmon-pink);
+}
+
+.form-wrapper a {
+  text-decoration: none;
+}
+
+.form-wrapper a:hover {
+  text-decoration: underline;
+}
+
+.form-wrapper :where(label, p, small, a) {
+  color: #b3b3b3;
+}
+
+form .form-help {
+  display: flex;
+  justify-content: space-between;
+}
+
+form .remember-me {
+  display: flex;
+}
+
+form .remember-me input {
+  margin-right: 5px;
+  accent-color: #b3b3b3;
+}
+
+form .form-help :where(label, a) {
+  font-size: 0.9rem;
+}
+
+.form-wrapper p a {
+  color: var(--salmon-pink);
+}
+
+.form-wrapper small {
+  display: block;
+  margin-top: 5px;
+  color: #b3b3b3;
+}
+
+.form-wrapper small a {
+  color: var(--salmon-pink);
+}
+
+/* For Register Form */
+.form-register {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: auto;
+  border-radius: 15px;
+  padding: 40px;
+  width: 400px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.form-register h2 {
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+.form-register form {
+  margin: 20px 0 40px;
+  display: block;
+}
+
+form .form-controlreg {
+  height: 45px;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.form-controlreg input {
+  height: 100%;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0 10px;
+}
+
+.form-controlreg input:is(:focus, :valid) {
+  background: #444;
+  padding: 12px 10px 0; /* Kurangi padding dari 16px 20px 0 ke 12px 10px 0 */
+}
+
+.form-controlreg label {
+  position: absolute;
+  left: 10px; /* Kurangi left dari 20px ke 10px */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+  color: #8c8c8c;
+  transition: all 0.1s ease;
+}
+
+.form-controlreg input:is(:focus, :valid) ~ label {
+  font-size: 0.75rem;
+  transform: translateY(-130%);
+}
+
+form button {
+  grid-column: span 2;
+  width: 100%;
+  padding: 12px 0; /* Kurangi padding dari 16px 0 ke 12px 0 */
+  font-size: 1rem;
+  background: var(--bittersweet);
+  color: #fff;
+  font-weight: 300;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  margin: 20px 0 10px; /* Kurangi margin dari 25px 0 10px ke 20px 0 10px */
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+
+form button:hover {
+  background: var(--salmon-pink);
+}
+
+.form-register a {
+  text-decoration: none;
+  top: 10px;
+}
+
+.form-register a:hover {
+  text-decoration: underline;
+}
+
+.form-register :where(label, p, small, a) {
+  color: #b3b3b3;
+}
+
+form .form-help {
+  display: flex;
+  justify-content: space-between;
+}
+
+form .form-help :where(label, a) {
+  font-size: 0.9rem;
+}
+
+.form-register p a {
+  color: var(--salmon-pink);
+}
+
+.agree-statement,
+a,
+p {
+  color: #fff;
+  font-size: 14px;
+}
+.agree-statement a {
+  color: var(--salmon-pink);
+}
+
+/* Media Query for Responsive Design */
+@media screen and (max-width: 490px) {
+  nav img {
+    display: none;
+  }
+  .form-register {
+    width: 75%; /* Ubah lebar form menjadi 90% dari lebar layar */
+    padding: 20px; /* Kurangi padding untuk tampilan yang lebih kecil */
+  }
+
+  .form-register h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  form .form-controlreg {
+    height: 40px;
+  }
+
+  form .form-controlreg input {
+    font-size: 0.9rem;
+    padding: 0 8px;
+  }
+  form .agree-statement,
+  a,
+  p {
+    font-size: 12px;
+    text-align: start;
+  }
+  form button {
+    padding: 10px 0;
+    font-size: 0.9rem;
+  }
+
+  .form-wrapper {
+    width: 75%; /* Ubah lebar form menjadi 90% dari lebar layar */
+    padding: 20px; /* Kurangi padding untuk tampilan yang lebih kecil */
+  }
+
+  /* Login */
+  .form-wrapper h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  form .form-control {
+    height: 50px;
+  }
+
+  form .form-control input {
+    font-size: 0.9rem;
+    padding: 0 8px;
+  }
+  form .form-help,
+  a,
+  p {
+    font-size: 13px;
+    text-align: start;
+  }
+  form button {
+    padding: 10px 0;
+    font-size: 0.9rem;
+  }
+}
